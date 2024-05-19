@@ -19,3 +19,10 @@ void simulateTheLineUsingNaiveLinearFunctionSampling(
 		std::cout << "x: " << x << " y: " << discreteY << std::endl;
 	}
 }
+
+void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
+	int endPointXCoordinate,
+	int endPointYCoordinate)
+{
+
+}
