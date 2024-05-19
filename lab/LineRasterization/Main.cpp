@@ -58,6 +58,13 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
 }
 
 
+/*
+
+	Problems:
+		- (One time) Division
+		- Double as data type
+		- (Rcurrent) If-else branch
+*/
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
@@ -68,7 +75,20 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 	for (int x = 0; x <= endPointXCoordinate; x++)
 	{
 		continuousY += slope;
-		discreteY = round(continuousY);
+		if (continuousY - discreteY >= 0.5)
+		{
+			discreteY++;
+		}
 		std::cout << "x: " << x << " y: " << discreteY << std::endl;
 	}
+
+}
+
+
+void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
+	int endPointXCoordinate,
+	int endPointYCoordinate)
+{
+
+	
 }
