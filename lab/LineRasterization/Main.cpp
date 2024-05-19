@@ -1,27 +1,32 @@
 #include "Main.h"
-#include <iostream>
+
 
 #define simulateTheLineUsingBresenhamAlgorithm simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5 
 #define imulateTheLineUsingBresenhamAlgorithmOptimized simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8
 
 
+
 int main()
 {
-	simulateTheLineUsingNaiveLinearFunctionSampling(4, 3);
+	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSampling(4, 3));
+	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(4, 3));
+	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(4, 3));
+	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(4, 3));
+	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(4, 3));
+	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(4, 3));
+	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(4, 3));
+	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(4, 3));
+	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(4, 3));
+}
+
+void displayTheResults(std::vector<int> results)
+{
+	int x = 0;
+	for (auto y : results)
+	{
+		std::cout << "x: " << x++ << " y: " << y << std::endl;
+	}
 	std::cout << "---------" << std::endl;
-	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(4, 3);
-	std::cout << "---------" << std::endl;
-	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(4, 3);
-	std::cout << "---------" << std::endl;
-	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(4, 3);
-	std::cout << "---------" << std::endl;
-	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(4, 3);
-	std::cout << "---------" << std::endl;
-	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(4, 3);
-	std::cout << "---------" << std::endl;
-	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(4, 3);
-	std::cout << "---------" << std::endl;
-	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(4, 3);
 }
 
 /*
@@ -34,16 +39,19 @@ int main()
 		- Recurrent variable creation (continousY and discreteY)
 
 */
-void simulateTheLineUsingNaiveLinearFunctionSampling(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSampling(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	std::vector<int> yValues;
+
 	for (int x = 0; x <= endPointXCoordinate; x++)
 	{
 		double continuousY = ((double)endPointYCoordinate / endPointXCoordinate) * x;
 		int discreteY = round(continuousY);
-		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+		yValues.push_back(discreteY);
 	}
+	return yValues;
 }
 
 /*
@@ -53,10 +61,12 @@ void simulateTheLineUsingNaiveLinearFunctionSampling(
 		- (Recurrent) Rounding (-> recurrent function calls)
 		- Double as data type
 */
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	std::vector<int> yValues;
+
 	double slope = ((double)endPointYCoordinate / endPointXCoordinate);
 	double continuousY = -slope;
 	int discreteY = 0;
@@ -64,8 +74,9 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
 	{
 		continuousY += slope;
 		discreteY = round(continuousY);
-		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+		yValues.push_back(discreteY);
 	}
+	return yValues;
 }
 
 
@@ -76,10 +87,12 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
 		- Double as data type
 		- (Recurrent) If-else branch
 */
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	std::vector<int> yValues;
+
 	double slope = ((double)endPointYCoordinate / endPointXCoordinate);
 	double continuousY = -slope;
 	int discreteY = 0;
@@ -90,9 +103,10 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 		{
 			discreteY++;
 		}
-		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+		yValues.push_back(discreteY);
 	}
 
+	return yValues;
 }
 
 /*
@@ -103,10 +117,12 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 		- Double as data type
 		- (Recurrent) If-else branch
 */
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	std::vector<int> yValues;
+
 	int discreteY = 0;
 	for (int x = 0; x <= endPointXCoordinate; x++)
 	{
@@ -114,9 +130,9 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 		{
 			discreteY++;
 		}
-		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+		yValues.push_back(discreteY);
 	}
-
+	return yValues;
 }
 
 
@@ -126,10 +142,12 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 		- (Recurrent) Multiplication
 		- (Recurrent) If-else branch
 */
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	std::vector<int> yValues;
+
 	int discreteY = 0;
 	for (int x = 0; x <= endPointXCoordinate; x++)
 	{
@@ -137,9 +155,9 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
 		{
 			discreteY++;
 		}
-		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+		yValues.push_back(discreteY);
 	}
-
+	return yValues;
 }
 
 
@@ -148,10 +166,12 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
 	Problems:
 		- (Recurrent) If-else branch
 */
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	std::vector<int> yValues;
+
 	int discreteY = 0;
 	int firstTerm = 0;
 	int secondTerm = 0;
@@ -164,8 +184,9 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 		}
 
 		firstTerm += endPointYCoordinate;
-		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+		yValues.push_back(discreteY);
 	}
+	return yValues;
 }
 
 
@@ -176,10 +197,12 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 		- Recurrent casting
 		- Recurrent comparison
 */
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	std::vector<int> yValues;
+
 	int discreteY = 0;
 	int error = -endPointXCoordinate;
 	int firstIncrementingTerm = -2 * endPointXCoordinate;
@@ -191,8 +214,9 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
 		discreteY += predicateAsInteger;
 		error += predicateAsInteger * firstIncrementingTerm;
 		error += secondIncrementingTerm;
-		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+		yValues.push_back(discreteY);
 	}
+	return yValues;
 }
 
 /*
@@ -201,10 +225,12 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
 		- Recurrent casting
 		- Recurrent comparison
 */
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	std::vector<int> yValues;
+
 	int discreteY = 0;
 	int error = -endPointXCoordinate;
 	int firstIncrementingTerm = -2 * endPointXCoordinate;
@@ -215,14 +241,17 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
 		predicateAsInteger = -(int)(error >= 0);
 		discreteY -= predicateAsInteger;
 		error += (predicateAsInteger & firstIncrementingTerm) + secondIncrementingTerm;
-		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+		yValues.push_back(discreteY);
 	}
+	return yValues;
 }
 
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	std::vector<int> yValues;
+
 	int discreteY = 0;
 	int error = -endPointXCoordinate;
 	int firstIncrementingTerm = -2 * endPointXCoordinate;
@@ -234,6 +263,7 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
 		discreteY -= predicateAsInteger;
 		error += predicateAsInteger & firstIncrementingTerm;
 		error += secondIncrementingTerm;
-		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+		yValues.push_back(discreteY);
 	}
+	return yValues;
 }

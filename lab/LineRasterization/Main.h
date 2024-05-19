@@ -1,39 +1,44 @@
 #pragma once
 
-void simulateTheLineUsingNaiveLinearFunctionSampling(
+#include <iostream>
+#include <vector>
+
+void displayTheResults(std::vector<int> results);
+
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSampling(
 	int endPointXCoordinate,
 	int endPointYCoordinate);
 
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
-	int endPointXCoordinate,
-	int endPointYCoordinate);
-
-
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
-	int endPointXCoordinate,
-	int endPointYCoordinate);
-
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
 	int endPointXCoordinate,
 	int endPointYCoordinate);
 
 
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 	int endPointXCoordinate,
 	int endPointYCoordinate);
 
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 	int endPointXCoordinate,
 	int endPointYCoordinate);
 
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
+
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
 	int endPointXCoordinate,
 	int endPointYCoordinate);
 
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 	int endPointXCoordinate,
 	int endPointYCoordinate);
 
-void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
+	int endPointXCoordinate,
+	int endPointYCoordinate);
+
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
+	int endPointXCoordinate,
+	int endPointYCoordinate);
+
+std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
 	int endPointXCoordinate,
 	int endPointYCoordinate);
