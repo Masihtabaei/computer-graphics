@@ -1,6 +1,8 @@
 #include "Main.h"
 #include <iostream>
 
+#define simulateTheLineUsingBresenhamAlgorithm simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5 
+#define imulateTheLineUsingBresenhamAlgorithmOptimized simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8
 
 
 int main()
@@ -180,15 +182,15 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
 {
 	int discreteY = 0;
 	int error = -endPointXCoordinate;
-	int firstIncrementalTerm = -2 * endPointXCoordinate;
-	int secondIncrementalTerm = 2 * endPointYCoordinate;
+	int firstIncrementingTerm = -2 * endPointXCoordinate;
+	int secondIncrementingTerm = 2 * endPointYCoordinate;
 	int predicateAsInteger = 0;
 	for (int x = 0; x <= endPointXCoordinate; x++)
 	{
 		predicateAsInteger = (int)(error >= 0);
 		discreteY += predicateAsInteger;
-		error += predicateAsInteger * firstIncrementalTerm;
-		error += secondIncrementalTerm;
+		error += predicateAsInteger * firstIncrementingTerm;
+		error += secondIncrementingTerm;
 		std::cout << "x: " << x << " y: " << discreteY << std::endl;
 	}
 }
@@ -205,15 +207,14 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
 {
 	int discreteY = 0;
 	int error = -endPointXCoordinate;
-	int firstIncrementalTerm = -2 * endPointXCoordinate;
-	int secondIncrementalTerm = 2 * endPointYCoordinate;
+	int firstIncrementingTerm = -2 * endPointXCoordinate;
+	int secondIncrementingTerm = 2 * endPointYCoordinate;
 	int predicateAsInteger = 0;
 	for (int x = 0; x <= endPointXCoordinate; x++)
 	{
 		predicateAsInteger = -(int)(error >= 0);
 		discreteY -= predicateAsInteger;
-		error += predicateAsInteger & firstIncrementalTerm;
-		error += secondIncrementalTerm;
+		error += (predicateAsInteger & firstIncrementingTerm) + secondIncrementingTerm;
 		std::cout << "x: " << x << " y: " << discreteY << std::endl;
 	}
 }
@@ -222,4 +223,17 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	int discreteY = 0;
+	int error = -endPointXCoordinate;
+	int firstIncrementingTerm = -2 * endPointXCoordinate;
+	int secondIncrementingTerm = 2 * endPointYCoordinate;
+	int predicateAsInteger = 0;
+	for (int x = 0; x <= endPointXCoordinate; x++)
+	{
+		predicateAsInteger = -(int)(error >= 0);
+		discreteY -= predicateAsInteger;
+		error += predicateAsInteger & firstIncrementingTerm;
+		error += secondIncrementingTerm;
+		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+	}
 }
