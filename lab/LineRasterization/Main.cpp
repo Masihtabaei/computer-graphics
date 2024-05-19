@@ -18,6 +18,8 @@ int main()
 	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(4, 3);
 	std::cout << "---------" << std::endl;
 	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(4, 3);
+	std::cout << "---------" << std::endl;
+	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(4, 3);
 }
 
 /*
@@ -169,6 +171,8 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 
 	Problems:
 		- (Recurrent) Multiplication
+		- Recurrent casting
+		- Recurrent comparison
 */
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
 	int endPointXCoordinate,
@@ -189,9 +193,33 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
 	}
 }
 
+/*
+
+	Problems:
+		- Recurrent casting
+		- Recurrent comparison
+*/
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	int discreteY = 0;
+	int error = -endPointXCoordinate;
+	int firstIncrementalTerm = -2 * endPointXCoordinate;
+	int secondIncrementalTerm = 2 * endPointYCoordinate;
+	int predicateAsInteger = 0;
+	for (int x = 0; x <= endPointXCoordinate; x++)
+	{
+		predicateAsInteger = -(int)(error >= 0);
+		discreteY -= predicateAsInteger;
+		error += predicateAsInteger & firstIncrementalTerm;
+		error += secondIncrementalTerm;
+		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+	}
+}
 
+void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
+	int endPointXCoordinate,
+	int endPointYCoordinate)
+{
 }
