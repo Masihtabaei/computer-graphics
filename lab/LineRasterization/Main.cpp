@@ -84,11 +84,35 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 
 }
 
+/*
 
+	Problems:
+		- (Recurrent) Division
+		- (Recurrent) Multiplication
+		- Double as data type
+		- (Rcurrent) If-else branch
+*/
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
-
+	int discreteY = 0;
+	for (int x = 0; x <= endPointXCoordinate; x++)
+	{
+		if (((double)endPointYCoordinate / endPointXCoordinate) * x - discreteY >= 0.5)
+		{
+			discreteY++;
+		}
+		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+	}
 	
+}
+
+
+void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
+	int endPointXCoordinate,
+	int endPointYCoordinate)
+{
+
+
 }
