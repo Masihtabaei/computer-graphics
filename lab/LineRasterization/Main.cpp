@@ -16,6 +16,8 @@ int main()
 	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(4, 3);
 	std::cout << "---------" << std::endl;
 	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(4, 3);
+	std::cout << "---------" << std::endl;
+	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(4, 3);
 }
 
 /*
@@ -34,7 +36,7 @@ void simulateTheLineUsingNaiveLinearFunctionSampling(
 {
 	for (int x = 0; x <= endPointXCoordinate; x++)
 	{
-		double continuousY = ((double) endPointYCoordinate / endPointXCoordinate) * x;
+		double continuousY = ((double)endPointYCoordinate / endPointXCoordinate) * x;
 		int discreteY = round(continuousY);
 		std::cout << "x: " << x << " y: " << discreteY << std::endl;
 	}
@@ -51,7 +53,7 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
-	double slope = ((double) endPointYCoordinate / endPointXCoordinate);
+	double slope = ((double)endPointYCoordinate / endPointXCoordinate);
 	double continuousY = -slope;
 	int discreteY = 0;
 	for (int x = 0; x <= endPointXCoordinate; x++)
@@ -110,7 +112,7 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 		}
 		std::cout << "x: " << x << " y: " << discreteY << std::endl;
 	}
-	
+
 }
 
 
@@ -163,7 +165,31 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 }
 
 
+/*
+
+	Problems:
+		- (Recurrent) Multiplication
+*/
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
+	int endPointXCoordinate,
+	int endPointYCoordinate)
+{
+	int discreteY = 0;
+	int error = -endPointXCoordinate;
+	int firstIncrementalTerm = -2 * endPointXCoordinate;
+	int secondIncrementalTerm = 2 * endPointYCoordinate;
+	int predicateAsInteger = 0;
+	for (int x = 0; x <= endPointXCoordinate; x++)
+	{
+		predicateAsInteger = (int)(error >= 0);
+		discreteY += predicateAsInteger;
+		error += predicateAsInteger * firstIncrementalTerm;
+		error += secondIncrementalTerm;
+		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+	}
+}
+
+void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
