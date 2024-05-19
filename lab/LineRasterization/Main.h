@@ -25,3 +25,7 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 	int endPointXCoordinate,
 	int endPointYCoordinate);
+
+void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
+	int endPointXCoordinate,
+	int endPointYCoordinate);

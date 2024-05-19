@@ -14,6 +14,8 @@ int main()
 	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(4, 3);
 	std::cout << "---------" << std::endl;
 	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(4, 3);
+	std::cout << "---------" << std::endl;
+	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(4, 3);
 }
 
 /*
@@ -134,9 +136,36 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
 
 }
 
+
+/*
+	Bresenham
+	Problems:
+		- (Recurrent) If-else branch
+*/
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
-	
+	int discreteY = 0;
+	int firstTerm = 0;
+	int secondTerm = 0;
+	for (int x = 0; x <= endPointXCoordinate; x++)
+	{
+		if (2 * (firstTerm - secondTerm) >= endPointXCoordinate)
+		{
+			discreteY++;
+			secondTerm += endPointXCoordinate;
+		}
+
+		firstTerm += endPointYCoordinate;
+		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+	}
+}
+
+
+void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
+	int endPointXCoordinate,
+	int endPointYCoordinate)
+{
+
 }
