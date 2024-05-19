@@ -10,7 +10,10 @@ int main()
 	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(4, 3);
 	std::cout << "---------" << std::endl;
 	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(4, 3);
-
+	std::cout << "---------" << std::endl;
+	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(4, 3);
+	std::cout << "---------" << std::endl;
+	simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(4, 3);
 }
 
 /*
@@ -63,7 +66,7 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
 	Problems:
 		- (One time) Division
 		- Double as data type
-		- (Rcurrent) If-else branch
+		- (Recurrent) If-else branch
 */
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 	int endPointXCoordinate,
@@ -90,7 +93,7 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 		- (Recurrent) Division
 		- (Recurrent) Multiplication
 		- Double as data type
-		- (Rcurrent) If-else branch
+		- (Recurrent) If-else branch
 */
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 	int endPointXCoordinate,
@@ -109,10 +112,31 @@ void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 }
 
 
+/*
+
+	Problems:
+		- (Recurrent) Multiplication
+		- (Recurrent) If-else branch
+*/
 void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
+	int discreteY = 0;
+	for (int x = 0; x <= endPointXCoordinate; x++)
+	{
+		if (2 * x * endPointYCoordinate - 2 * discreteY * endPointXCoordinate >= endPointXCoordinate)
+		{
+			discreteY++;
+		}
+		std::cout << "x: " << x << " y: " << discreteY << std::endl;
+	}
 
+}
 
+void simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
+	int endPointXCoordinate,
+	int endPointYCoordinate)
+{
+	
 }
