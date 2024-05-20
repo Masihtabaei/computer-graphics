@@ -1,22 +1,25 @@
 #include "Main.h"
 
 
-#define simulateTheLineUsingBresenhamAlgorithm simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5 
-#define imulateTheLineUsingBresenhamAlgorithmOptimized simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8
+#define simulateTheLineThroughOriginAndInFirstOctantUsingBresenhamAlgorithm simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV5
+#define simulateTheLineThroughOriginAndInFirstOctantUsingBresenhamAlgorithmOptimized simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV8
 
 
 
 int main()
 {
-	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSampling(4, 3));
-	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(4, 3));
-	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(4, 3));
-	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(4, 3));
-	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(4, 3));
-	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(4, 3));
-	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(4, 3));
-	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(4, 3));
-	displayTheResults(simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSampling(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV1(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV2(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV3(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV4(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV5(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV6(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV7(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV8(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingBresenhamAlgorithm(4, 3));
+	displayTheResults(simulateTheLineThroughOriginAndInFirstOctantUsingBresenhamAlgorithmOptimized(4, 3));
+	simulateTheLineThroughOriginAndInFirstOctantUsingSignedDistanceFunctionSampling(4, 3, 4.0/5);
 }
 
 void displayTheResults(std::vector<int> results)
@@ -39,7 +42,7 @@ void displayTheResults(std::vector<int> results)
 		- Recurrent variable creation (continousY and discreteY)
 
 */
-std::vector<int> simulateTheLineUsingNaiveLinearFunctionSampling(
+std::vector<int> simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSampling(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
@@ -61,7 +64,7 @@ std::vector<int> simulateTheLineUsingNaiveLinearFunctionSampling(
 		- (Recurrent) Rounding (-> recurrent function calls)
 		- Double as data type
 */
-std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
+std::vector<int> simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
@@ -87,7 +90,7 @@ std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV1(
 		- Double as data type
 		- (Recurrent) If-else branch
 */
-std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
+std::vector<int> simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
@@ -117,7 +120,7 @@ std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV2(
 		- Double as data type
 		- (Recurrent) If-else branch
 */
-std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
+std::vector<int> simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
@@ -142,7 +145,7 @@ std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV3(
 		- (Recurrent) Multiplication
 		- (Recurrent) If-else branch
 */
-std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
+std::vector<int> simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
@@ -166,7 +169,7 @@ std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV4(
 	Problems:
 		- (Recurrent) If-else branch
 */
-std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
+std::vector<int> simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
@@ -197,7 +200,7 @@ std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV5(
 		- Recurrent casting
 		- Recurrent comparison
 */
-std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
+std::vector<int> simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
@@ -225,7 +228,7 @@ std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV6(
 		- Recurrent casting
 		- Recurrent comparison
 */
-std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
+std::vector<int> simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
@@ -246,7 +249,7 @@ std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV7(
 	return yValues;
 }
 
-std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
+std::vector<int> simulateTheLineThroughOriginAndInFirstOctantUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
 	int endPointXCoordinate,
 	int endPointYCoordinate)
 {
@@ -266,4 +269,26 @@ std::vector<int> simulateTheLineUsingNaiveLinearFunctionSamplingSelfOptimizedV8(
 		yValues.push_back(discreteY);
 	}
 	return yValues;
+}
+
+std::map<int, int> simulateTheLineThroughOriginAndInFirstOctantUsingSignedDistanceFunctionSampling(
+	int endPointXCoordinate,
+	int endPointYCoordinate,
+	double threshold)
+{
+	std::map<int, int> pointsInsideTheConsensusRange;
+	double thresholdHalved = threshold / 2;
+	for (int x = 0; x <= endPointXCoordinate; x++)
+	{
+		for (int y = 0; y <= endPointYCoordinate; y++)
+		{
+			double distanceToTheLine = (endPointXCoordinate * y - endPointYCoordinate * x) / pow(pow(endPointXCoordinate, 2) + pow(endPointYCoordinate, 2), 1/2.0);
+			if (distanceToTheLine <= thresholdHalved && distanceToTheLine > -thresholdHalved)
+			{
+				pointsInsideTheConsensusRange[x] = y;
+				std::cout << "Valid x:" << x << " Valid y: " << y << std::endl;
+			}
+		}
+	}
+	return pointsInsideTheConsensusRange;
 }
