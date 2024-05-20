@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LineRasterization", "LineRa
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatricesAndVectors", "MatricesAndVectors\MatricesAndVectors.vcxproj", "{7F30D2B6-F59B-4E56-BE33-691AB26329A6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LineClipping", "LineClipping\LineClipping.vcxproj", "{70C032BE-9998-4264-AA39-9F65E05A344E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{7F30D2B6-F59B-4E56-BE33-691AB26329A6}.Release|x64.Build.0 = Release|x64
 		{7F30D2B6-F59B-4E56-BE33-691AB26329A6}.Release|x86.ActiveCfg = Release|Win32
 		{7F30D2B6-F59B-4E56-BE33-691AB26329A6}.Release|x86.Build.0 = Release|Win32
+		{70C032BE-9998-4264-AA39-9F65E05A344E}.Debug|x64.ActiveCfg = Debug|x64
+		{70C032BE-9998-4264-AA39-9F65E05A344E}.Debug|x64.Build.0 = Debug|x64
+		{70C032BE-9998-4264-AA39-9F65E05A344E}.Debug|x86.ActiveCfg = Debug|Win32
+		{70C032BE-9998-4264-AA39-9F65E05A344E}.Debug|x86.Build.0 = Debug|Win32
+		{70C032BE-9998-4264-AA39-9F65E05A344E}.Release|x64.ActiveCfg = Release|x64
+		{70C032BE-9998-4264-AA39-9F65E05A344E}.Release|x64.Build.0 = Release|x64
+		{70C032BE-9998-4264-AA39-9F65E05A344E}.Release|x86.ActiveCfg = Release|Win32
+		{70C032BE-9998-4264-AA39-9F65E05A344E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
