@@ -16,6 +16,6 @@ public:
 	double getTheSlope(void) const;
 	double getTheIntercept(void) const;
 
-	bool checksWhetherTheGivenPointLiesOnTheLine(IntVector2D pointToCheck);
+	bool checkWhetherTheGivenPointLiesOnTheLine(IntVector2D pointToCheck);
 	IntVector2D determineTheIntersectionPointWithAnotherLine(Line2D anotherLine);
 };

@@ -6,16 +6,6 @@
 
 #include <exception>
 
-class NoIntersectionPointException : public std::exception {
-private:
-	std::string exceptionMessage;
-public:
-	NoIntersectionPointException(const std::string& message) : exceptionMessage(message) {}
-	const char* what() const noexcept override {
-		return exceptionMessage.c_str();
-	}
-
-};
 
 
 class IntLineSegment2D
@@ -38,7 +28,7 @@ public:
 	bool getTheCullingState(void) const;
 	double getTheSlope(void) const;
 
+	bool checkWhetherTheGivenPointLiesOnTheLineSegment(IntVector2D pointToCheck);
 	IntVector2D determineTheIntersectionPointWithAnotherLineSegment(IntLineSegment2D anotherLineSegment);
 	IntVector2D determineTheIntersectionPointWithAnotherLine(Line2D anotherLine);
-
 };

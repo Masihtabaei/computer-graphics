@@ -6,8 +6,20 @@
 #include <cmath>
 
 
-#define MANHATTAN_NORM ((int) 1)
-#define TAXI_CAB_NORM ((int) 1)
-#define EUCLIDEAN_NORM ((int) 2)
-#define INFINITY_NORM ((int) -1)
+constexpr int MANHATTAN_NORM = 1;
+constexpr int TAXI_CAB_NORM = 1;
+constexpr int EUCLIDEAN_NORM = 2;
+constexpr int INFINITY_NORM = -1;
+
+
+class NoIntersectionPointException : public std::exception {
+private:
+	std::string exceptionMessage;
+public:
+	NoIntersectionPointException(const std::string& message) : exceptionMessage(message) {}
+	const char* what() const noexcept override {
+		return exceptionMessage.c_str();
+	}
+};
+
 
