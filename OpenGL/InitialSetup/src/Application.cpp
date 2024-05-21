@@ -1,4 +1,6 @@
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <iostream>
 
 int main(void)
 {
@@ -8,6 +10,8 @@ int main(void)
     if (!glfwInit())
         return -1;
 
+
+
     /* Create a windowed mode window and its OpenGL context */
     window = glfwCreateWindow(640, 480, "My First Fancy Triangle (21.05.2024 | 03:02)", NULL, NULL);
     if (!window)
@@ -16,8 +20,16 @@ int main(void)
         return -1;
     }
 
+
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
+
+    if (glewInit() != GLEW_OK)
+    {
+        std::cout << "You can not initialize GLEW without having a valid OpenGL context!" << std::endl;
+    }
+
+    std::cout << "Your OpenGL version: " << glGetString(GL_VERSION) << std::endl;
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
